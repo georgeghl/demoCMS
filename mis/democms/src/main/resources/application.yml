@@ -1,0 +1,5 @@
+spring:
+    profiles:
+        active: mail, servlet, mybatis, mybatisplus, mysql, dev, openapi, myapp
+        # WARNING: Current version do not support postgresql, there're errors in Mappers.
+

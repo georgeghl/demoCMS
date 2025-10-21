@@ -1,0 +1,10 @@
+mybatis-plus:
+  configuration:
+    # MyBatis 配置
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: true
+    # 全局配置
+    db-config:
+      # 主键生成策略: AUTO：主键自增;INPUT：自己指定数据的ID;ASSIGN_ID：雪花算法;ASSIGN_UUID：UUID，设置为UUID.
+      id-type: auto

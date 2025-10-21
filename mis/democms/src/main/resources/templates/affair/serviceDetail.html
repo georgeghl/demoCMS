@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 办事大厅'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link active">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+
+        <div class="text-para">
+            <h1 th:text="${affairServiceItem.title}"></h1>
+            <p class="meta-info author" th:text="'作者：' + ${affairServiceItem.author}"><i class="fas fa-user"></i></p>
+            <p class="meta-info publish-time" th:text="'发布时间：' + ${affairServiceItem.time}"><i class="fas fa-calendar-alt"></i>
+            </p>
+            <!-- <p class="meta-info last-modified" th:text="'最后修改：' + ${affairServiceItem.time}"><i
+                    class="fas fa-edit"></i></p> -->
+            <img class="cover-image" th:src="${affairServiceItem.cover}" th:alt="${affairServiceItem.title}"
+                onerror="this.src='/img/asset/placeholder.jpg'">
+            <div class="content" th:utext="${affairServiceItem.content}"></div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

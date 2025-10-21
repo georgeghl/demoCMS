@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 学校简介'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0//css/all.min.css"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link active">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <div class="page-content active">
+            <div class="section-title">学校概况</div>
+            <div class="sub-nav">
+                <div class="sub-nav-item"><a href="/about/intro">学校简介</a></div>
+                <div class="sub-nav-item active">校园风光</div>
+                <div class="sub-nav-item"><a href="/about/leader">领导团队</a></div>
+                <div class="sub-nav-item"><a href="/about/organization">组织机构</a></div>
+                <div class="sub-nav-item"><a href="/about/contact">联系方式</a></div>
+            </div>
+
+            <div class="sub-page active">
+                <h3>校园风光</h3>
+                <!-- 学校图片展示 -->
+                <div class="school-gallery">
+                    <div class="gallery-item"   th:each="photo: ${photos}">
+                        <img th:src="${photo.base64content}" th:alt="${photo.name}">
+                        <p th:text="${photo.name}"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- 图片放大模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 师生共创'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link active">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <div class="page-content active">
+            <div class="section-title">师生共创</div>
+            <div class="sub-nav">
+                <div class="sub-nav-item"><a href="/education/teacher/teacher">名师荟萃</a></div>
+                <div class="sub-nav-item active">教学研究</div>
+                <div class="sub-nav-item"><a href="/education/student/club">多彩社团</a></div>
+                <div class="sub-nav-item"><a href="/education/student/activity">学生活动</a></div>
+            </div>
+
+            <div class="sub-page active">
+                <h3>教研活动</h3>
+                
+                <!-- 活动日历 -->
+                <div class="activity-calendar">
+                    <h4><i class="fas fa-calendar"></i> 活动日历</h4>
+                    <div class="calendar-container">
+                        <div class="calendar-month">
+                            <h5>2025年9月</h5>
+                            <div class="calendar-grid">
+                                <div class="calendar-day">
+                                    <span class="day-number">1</span>
+                                    <div class="day-event">开学后第一次教研活动</div>
+                                </div>
+                                <div class="calendar-day">
+                                    <span class="day-number">7</span>
+                                    <div class="day-event">第一周教研活动</div>
+                                </div>
+                                <div class="calendar-day">
+                                    <span class="day-number">14</span>
+                                    <div class="day-event">第二周教研活动</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 近期教研 -->
+                <div class="recent-activities">
+                    <h4><i class="fas fa-newspaper"></i> 近期教研</h4>
+                    <div class="activities-list">
+                        <div class="activity-article" th:each="newsItem:${newsItems}">
+                            <div class="article-image">
+                                <img th:src="${newsItem.cover}" th:alt="${newsItem.title}"
+                                     onerror="this.src='/img/asset/placeholder.jpg'">
+                            </div>
+                            <div class="article-content">
+                                <h5 th:text="${newsItem.title}"></h5>
+                                <p class="article-date"><i class="far fa-calendar" th:text="${newsItem.time}"></i></p>
+                                <p th:text="${newsItem.desp}"></p>
+                                <a  th:href="'/news/detail/'+${newsItem.uid}" class="read-more">阅读详情</a>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+
+                <!-- 活动照片 -->
+                <div class="activity-photos">
+                    <h4><i class="fas fa-camera"></i> 活动照片</h4>
+                    <div class="photos-grid">
+                        <div class="photo-item" th:each="photo: ${researchPhotos}">
+                            <img th:src="${photo.base64content}" alt="活动照片"
+                                 onerror="this.src='/img/asset/placeholder.jpg'">
+                            <p th:text="${photo.name}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

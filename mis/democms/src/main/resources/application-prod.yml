@@ -1,0 +1,24 @@
+spring:
+  main:
+    banner-mode: off
+  web: 
+    resources:
+      # 这里手动指定了本地上传路径到暂存路径，避免上传时图片静态资源占用过大
+      static-locations: ["classpath:/static/","file:/tmp/democms/"]
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    view:
+      suffix: .html
+
+server:
+  address: 0.0.0.0
+  port: 48888 # 默认端口
+
+logging:
+  # 配置级别
+  level:
+    root: info
+    #root: debug
+    #分包配置级别，即不同的目录下可以使用不同的级别
+    "[top.clarkhg.democms]": info

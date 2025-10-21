@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 党建公开'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link active">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <div class="page-content active">
+            <div class="section-title">党建德育</div>
+            <div class="sub-nav">
+                <div class="sub-nav-item active">党建公开</div>
+                <div class="sub-nav-item"><a href="/party/moral">德育管理</a></div>
+            </div>
+
+            <div class="sub-page active">
+                <h3>党建公开</h3>
+                
+                <!-- 党组织结构 -->
+                <div class="party-org-section">
+                    <h4><i class="fas fa-sitemap"></i> 党组织结构</h4>
+                    <div class="party-org-chart" th:utext="${partyOrgan}">
+                        
+                    </div>
+                </div>
+
+                <!-- 党建活动 -->
+                <div class="party-activities">
+                    <h4><i class="fas fa-calendar-alt"></i> 近期党建活动</h4>
+                    <div class="activity-list">
+                        <div class="activity-item" th:each="newsItem:${newsItems}">
+                            <div class="activity-date">
+                                <img th:src="${newsItem.cover}">
+                                <!-- <span class="day" th:text="${#strings.abbreviate(#strings.substring(newsItem.time, 4, 10),6)}"></span> -->
+                                <!-- <span th:text="${newsItem.time}"></span> -->
+                                <!-- <span class="day">25</span> -->
+                                <!-- <span class="month">8月</span> -->
+                            </div>
+                            <div class="activity-content">
+                                <h5 th:text="${newsItem.title}"></h5>
+                                <p th:text="${newsItem.desp}"></p>
+                                <!-- <span class="activity-location"><i class="fas fa-map-marker-alt"></i> 红色教育基地</span> -->
+                                <a th:href="'/news/detail/'+${newsItem.uid}" class="read-more">查看详情</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- 党员风采 -->
+                <div class="party-members">
+                    <h4><i class="fas fa-users"></i> 优秀党员风采</h4>
+                    <div class="members-grid">
+                        <div class="member-card" th:each="member:${members}">
+                            <img th:src="${member.avatar}" th:alt="${member.name}" 
+                                 onerror="this.src='/img/asset/placeholder_people.jpg'">
+                            <h5 th:text="${member.name}"></h5>
+                            <p th:text="${member.slogan}"></p>
+                            <span class="member-desc" th:text="${member.desp}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

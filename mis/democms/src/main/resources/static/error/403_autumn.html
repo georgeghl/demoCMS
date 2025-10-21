@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Forbidden</title>
+    <link rel="stylesheet" href="/css/layui.css">
+    <style> 
+        html, body {
+            height: 100%;
+            min-height: 450px;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .content {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(to bottom, #f5cba7 0%, #f9e79f 80%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .maple-leaves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 20;
+        }
+        .main-text {
+            padding: 20px;
+            color: #2F4056;
+        }
+        .main-text h1 {
+            font-size: 5vh;
+            font-weight: 600;
+            margin: 0 0 1px;
+            color: #c0392b;
+        }
+        .main-text p {
+            font-size: 18px;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        .main-text .layui-btn {
+            background-color: #e67e22;
+            font-size: 16px;
+        }
+        .main-text .layui-btn:hover {
+            background-color: #d35400;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+        }
+        .ground {
+            height: 140px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #f9e79f;
+            z-index: 0;
+        }
+        .maple-tree {
+            position: absolute;
+            bottom: 140px;
+            z-index: 1;
+        }
+        .maple-tree:nth-child(1) {
+            left: 10%;
+            width: 100px;
+            height: 200px;
+        }
+        .maple-tree:nth-child(2) {
+            right: 10%;
+            width: 120px;
+            height: 240px;
+        }
+        .maple-tree .trunk {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 60%;
+            background: linear-gradient(to top, #4a3728, #8b4513);
+            border-radius: 3px;
+        }
+        .maple-tree .branch {
+            position: absolute;
+            background: #4a3728;
+            border-radius: 2px;
+        }
+        .maple-tree .branch:nth-child(1) {
+            width: 40px;
+            height: 4px;
+            bottom: 65%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-50deg);
+        }
+        .maple-tree .branch:nth-child(2) {
+            width: 40px;
+            height: 4px;
+            bottom: 65%;
+            left: 50%;
+            transform: translateX(-50%) rotate(50deg);
+        }
+        .maple-tree .branch:nth-child(3) {
+            width: 30px;
+            height: 3px;
+            bottom: 75%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-35deg);
+        }
+        .maple-tree .branch:nth-child(4) {
+            width: 30px;
+            height: 3px;
+            bottom: 75%;
+            left: 50%;
+            transform: translateX(-50%) rotate(35deg);
+        }
+        .maple-tree .branch:nth-child(5) {
+            width: 20px;
+            height: 2px;
+            bottom: 85%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-20deg);
+        }
+        .maple-tree .branch:nth-child(6) {
+            width: 20px;
+            height: 2px;
+            bottom: 85%;
+            left: 50%;
+            transform: translateX(-50%) rotate(20deg);
+        }
+        .maple-tree .foliage {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #c0392b;
+            clip-path: polygon(50% 0%, 10% 30%, 0% 70%, 20% 50%, 50% 100%, 80% 50%, 100% 70%, 90% 30%);
+            border-radius: 10%;
+        }
+        .maple-tree .foliage:nth-child(7) {
+            width: 90%;
+            height: 50%;
+            bottom: 50%;
+            box-shadow: 0 0 12px rgba(192, 57, 43, 0.4);
+        }
+        .maple-tree .foliage:nth-child(8) {
+            width: 70%;
+            height: 40%;
+            bottom: 70%;
+            background: #e74c3c;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+        .maple-tree .foliage:nth-child(9) {
+            width: 50%;
+            height: 30%;
+            bottom: 85%;
+            background: #cb4b16;
+            box-shadow: 0 0 8px rgba(203, 75, 22, 0.6);
+        }
+        .error-text {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) rotate(5deg);
+            font-weight: 800;
+            font-size: 160px;
+            color: #c0392b;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <canvas class="maple-leaves" id="maple-leaves"></canvas>
+        <div class="main-text">
+            <img src="/img/favicon.svg" class="logo" alt="Democms Logo">
+            <h1>403 - 禁止访问 / 403 - Forbidden</h1>
+            <p>哎呀！此页面像秋天的枫树林关闭，枫叶覆盖路径，禁止通行。</p>
+            <p>Oops! This page, like an autumn maple forest closed off, with leaves covering the path, forbids entry.</p>
+            <a href="/" class="layui-btn">Back to Home</a>
+        </div>
+        <div class="ground">
+            <div class="maple-tree">
+                <div class="trunk"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="foliage"></div>
+                <div class="foliage"></div>
+                <div class="foliage"></div>
+            </div>
+            <div class="maple-tree">
+                <div class="trunk"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="branch"></div>
+                <div class="foliage"></div>
+                <div class="foliage"></div>
+                <div class="foliage"></div>
+            </div>
+            <div class="error-text">403</div>
+        </div>
+    </div>
+    <script src="/js/layui.js"></script>
+    <script>
+        (function () {
+            function ready(fn) {
+                if (document.readyState != 'loading') {
+                    fn();
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+
+            function makeMapleLeaves(el) {
+                var ctx = el.getContext('2d');
+                var width = 0;
+                var height = 0;
+                var particles = [];
+
+                var Particle = function () {
+                    this.x = this.y = this.dx = this.dy = 0;
+                    this.size = Math.random() * 10 + 15; // Larger leaves (15-25px)
+                    this.opacity = Math.random() * 0.5 + 0.3;
+                    this.color = ['#c0392b', '#e74c3c', '#cb4b16'][Math.floor(Math.random() * 3)];
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.angularSpeed = (Math.random() * 0.02) - 0.01;
+                    this.reset();
+                }
+
+                Particle.prototype.reset = function () {
+                    this.y = Math.random() * height;
+                    this.x = Math.random() * width;
+                    this.dx = (Math.random() * 1) - 0.5;
+                    this.dy = (Math.random() * 0.5) + 0.5;
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.opacity = Math.random() * 0.5 + 0.3;
+                }
+
+                function createParticles(count) {
+                    if (count != particles.length) {
+                        particles = [];
+                        for (var i = 0; i < count; i++) {
+                            particles.push(new Particle());
+                        }
+                    }
+                }
+
+                function onResize() {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    el.width = width;
+                    el.height = height;
+                    createParticles((width * height) / 12000);
+                }
+
+                function drawMapleLeaf(x, y, size, angle, opacity, color) {
+                    ctx.save();
+                    ctx.translate(x, y);
+                    ctx.rotate(angle);
+                    ctx.fillStyle = `rgba(${color === '#c0392b' ? '192,57,43' : color === '#e74c3c' ? '231,76,60' : '203,75,22'}, ${opacity})`;
+                    ctx.beginPath();
+                    // Simplified maple leaf shape with five lobes, based on provided image
+                    ctx.moveTo(0, -size * 0.5); // Top lobe
+                    ctx.lineTo(-size * 0.4, -size * 0.1); // Left upper lobe
+                    ctx.lineTo(-size * 0.5, size * 0.3); // Left lower lobe
+                    ctx.lineTo(0, size * 0.5); // Bottom point
+                    ctx.lineTo(size * 0.5, size * 0.3); // Right lower lobe
+                    ctx.lineTo(size * 0.4, -size * 0.1); // Right upper lobe
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                function updateParticles() {
+                    ctx.clearRect(0, 0, width, height);
+
+                    particles.forEach(function (particle) {
+                        particle.y += particle.dy;
+                        particle.x += particle.dx;
+                        particle.angle += particle.angularSpeed;
+                        particle.opacity = Math.random() * 0.5 + 0.3;
+
+                        if (particle.y > height) {
+                            particle.y = 0;
+                            particle.x = Math.random() * width;
+                        }
+
+                        if (particle.x > width || particle.x < 0) {
+                            particle.x = Math.random() * width;
+                            particle.dx = -particle.dx;
+                        }
+
+                        drawMapleLeaf(particle.x, particle.y, particle.size, particle.angle, particle.opacity, particle.color);
+                    });
+
+                    window.requestAnimationFrame(updateParticles);
+                }
+
+                onResize();
+                updateParticles();
+            }
+
+            ready(function () {
+                var canvas = document.getElementById('maple-leaves');
+                makeMapleLeaves(canvas);
+            });
+        })();
+    </script>
+</body>
+</html>

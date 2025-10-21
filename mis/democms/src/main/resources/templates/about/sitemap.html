@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 网站地图'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link active">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <div class="page-content active">
+            <div class="section-title">网站地图</div>
+            
+            <div class="sitemap-content">
+                <div class="sitemap-intro">
+                    <p>欢迎使用schoolName网站地图。本地图旨在帮助您快速找到所需内容，方便浏览网站各个页面。</p>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-home"></i> 首页</h3>
+                    <ul>
+                        <li><a href="/">网站首页</a> - 学校概况、通知公告、轮播图展示</li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-school"></i> 学校概况</h3>
+                    <ul>
+                        <li><a href="../about//intro">学校简介</a> - 学校历史、办学理念、基本情况</li>
+                        <li><a href="../about/campus.html">校园风光</a> - 校园环境、设施设备照片展示</li>
+                        <li><a href="../about/leaders.html">领导团队</a> - 学校领导介绍及分工</li>
+                        <li><a href="../about/organization.html">组织机构</a> - 学校各部门设置及职能</li>
+                        <li><a href="../about/contact.html">联系我们</a> - 学校联系方式</li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-newspaper"></i> 新闻中心</h3>
+                    <ul>
+                        <li><a href="/news">通知公告</a> - 学校最新通知和公告信息</li>
+                        <li><a href="../news/affairs.html">校务公开</a> - 学校事务公开信息</li>
+                        <li><a href="../news/dynamics.html">校园动态</a> - 学校最新活动和新闻</li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-flag"></i> 党建德育</h3>
+                    <ul>
+                        <li><a href="../party/party-open.html">党建公开</a> - 党组织建设、党员活动</li>
+                        <li><a href="../party/moral.html">德育管理</a> - 德育工作、学生思想政治教育</li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-graduation-cap"></i> 学生成长</h3>
+                    <ul>
+                        <li><a href="/notice">社团活动</a> - 学生社团介绍及活动</li>
+                        <li><a href="../students/activities.html">学生活动</a> - 学生课外活动及成果展示</li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> 教师发展</h3>
+                    <ul>
+                        <li><a href="../teachers/showcase.html">教师风采</a> - 优秀教师介绍</li>
+                        <li><a href="../teachers/research.html">教研活动</a> - 教学研究及教研活动</li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-section">
+                    <h3><i class="fas fa-info-circle"></i> 其他页面</h3>
+                    <ul>
+                        <li><a href="privacy.html">隐私政策</a> - 网站隐私保护政策</li>
+                        <li><a href="../about/sitemap.html">网站地图</a> - 本站页面导航</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

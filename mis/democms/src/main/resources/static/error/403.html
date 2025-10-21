@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <link rel="stylesheet" href="/css/layui.css">
+</head>
+<body>
+    <script src="/js/layui.js"></script>
+    <script>
+        function getSeason() {
+            const now = new Date();
+            const month = now.getMonth() + 1; // getMonth() is 0-based
+            const day = now.getDate();
+
+            if ((month === 3 && day >= 20) || (month === 4) || (month === 5) || (month === 6 && day <= 20)) {
+                return 'spring';
+            } else if ((month === 6 && day >= 21) || (month === 7) || (month === 8) || (month === 9 && day <= 21)) {
+                return 'summer';
+            } else if ((month === 9 && day >= 22) || (month === 10) || (month === 11) || (month === 12 && day <= 20)) {
+                return 'autumn';
+            } else {
+                return 'winter';
+            }
+        }
+
+        // Redirect immediately to the seasonal 403 page
+        const season = getSeason();
+        let url = '/error/403_' + season + '.html';
+        if (['spring', 'summer', 'autumn', 'winter'].indexOf(season) === -1) {
+            url = '/error/403_spring.html'; // Fallback
+        }
+        window.location.href = url;
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 办事大厅'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link active">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+
+        <!-- 办事指南 -->
+        <div class="notice-section" id="affair-section">
+            <div class="section-title">
+                <span><i class="fas fa-bullhorn"></i> 办事指南</span>
+                <!-- <a href="/notice" class="more-link">查看更多 <i class="fas fa-arrow-right"></i></a> -->
+            </div>
+            <ul class="notice-list" id="affair-list">
+                <!-- 动态渲染新闻列表 -->
+            </ul>
+            <!-- 分页控件 -->
+            <div class="pagination" id="affair-pagination">
+                <!-- 动态渲染分页链接 -->
+            </div>
+        </div>
+
+        <!-- 云服务 -->
+        <div class="notice-section" id="affair-service-section">
+            <div class="section-title">
+                <span><i class="fas fa-bullhorn"></i> 云服务</span>
+            </div>
+            <div class="affair-service-container" id="affair-service-list">
+                <!-- 动态渲染云服务卡片 -->
+            </div>
+            <!-- 分页控件 -->
+            <div class="pagination" id="affair-service-pagination">
+                <!-- 动态渲染分页链接 -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/affair-board.js"></script>
+    <script src="/js/affair-service-board.js"></script>
+</body>
+
+</html>

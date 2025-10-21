@@ -1,0 +1,80 @@
+2025-10-12 02:21:43.504 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - Starting DemocmsApplication using Java 21.0.8 with PID 10416 (D:\D\Code\demoCMS\democms\target\classes started by George in D:\D\Code\demoCMS\democms)
+2025-10-12 02:21:43.504 [restartedMain] DEBUG t.clarkhg.democms.DemocmsApplication - Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-10-12 02:21:43.504 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - The following 8 profiles are active: "mail", "servlet", "mybatis", "mybatisplus", "mysql", "dev", "openapi", "myapp"
+2025-10-12 02:21:43.684 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[top.clarkhg.democms]' package. Please check your configuration.
+2025-10-12 02:21:43.702 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - MPJ SqlSessionFactory bean definition: sqlSessionFactory factoryBeanName: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration factoryMethodName: sqlSessionFactory source: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(javax.sql.DataSource)
+2025-10-12 02:21:43.741 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 48888 (http)
+2025-10-12 02:21:43.742 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-12 02:21:43.742 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-12 02:21:43.753 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-12 02:21:43.753 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 247 ms
+2025-10-12 02:21:43.797 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-10-12 02:21:43.855 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join properties config complete
+2025-10-12 02:21:43.860 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join SqlInjector init
+2025-10-12 02:21:43.873 [restartedMain] INFO  c.b.m.e.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2b06a2b
+2025-10-12 02:21:43.910 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-12 02:21:43.919 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 48888 (http) with context path '/'
+2025-10-12 02:21:43.923 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - Started DemocmsApplication in 0.47 seconds (process running for 1888.346)
+2025-10-12 02:21:43.924 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-10-12 02:21:45.355 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-12 02:21:45.356 [Thread-76] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-12 02:21:45.358 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-12 02:21:45.453 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - Starting DemocmsApplication using Java 21.0.8 with PID 10416 (D:\D\Code\demoCMS\democms\target\classes started by George in D:\D\Code\demoCMS\democms)
+2025-10-12 02:21:45.453 [restartedMain] DEBUG t.clarkhg.democms.DemocmsApplication - Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-10-12 02:21:45.454 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - The following 8 profiles are active: "mail", "servlet", "mybatis", "mybatisplus", "mysql", "dev", "openapi", "myapp"
+2025-10-12 02:21:45.643 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[top.clarkhg.democms]' package. Please check your configuration.
+2025-10-12 02:21:45.660 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - MPJ SqlSessionFactory bean definition: sqlSessionFactory factoryBeanName: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration factoryMethodName: sqlSessionFactory source: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(javax.sql.DataSource)
+2025-10-12 02:21:45.694 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 48888 (http)
+2025-10-12 02:21:45.695 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-12 02:21:45.695 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-12 02:21:45.705 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-12 02:21:45.706 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 251 ms
+2025-10-12 02:21:45.753 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-10-12 02:21:45.808 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join properties config complete
+2025-10-12 02:21:45.812 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join SqlInjector init
+2025-10-12 02:21:45.824 [restartedMain] INFO  c.b.m.e.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@415ba83d
+2025-10-12 02:21:45.858 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-12 02:21:45.867 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 48888 (http) with context path '/'
+2025-10-12 02:21:45.870 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - Started DemocmsApplication in 0.451 seconds (process running for 1890.294)
+2025-10-12 02:21:45.872 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-10-12 02:21:53.390 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-12 02:21:53.391 [Thread-80] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-12 02:21:53.392 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-12 02:21:53.480 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - Starting DemocmsApplication using Java 21.0.8 with PID 10416 (D:\D\Code\demoCMS\democms\target\classes started by George in D:\D\Code\demoCMS\democms)
+2025-10-12 02:21:53.481 [restartedMain] DEBUG t.clarkhg.democms.DemocmsApplication - Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-10-12 02:21:53.481 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - The following 8 profiles are active: "mail", "servlet", "mybatis", "mybatisplus", "mysql", "dev", "openapi", "myapp"
+2025-10-12 02:21:53.648 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[top.clarkhg.democms]' package. Please check your configuration.
+2025-10-12 02:21:53.662 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - MPJ SqlSessionFactory bean definition: sqlSessionFactory factoryBeanName: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration factoryMethodName: sqlSessionFactory source: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(javax.sql.DataSource)
+2025-10-12 02:21:53.691 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 48888 (http)
+2025-10-12 02:21:53.692 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-12 02:21:53.693 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-12 02:21:53.704 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-12 02:21:53.704 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 221 ms
+2025-10-12 02:21:53.747 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-10-12 02:21:53.799 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join properties config complete
+2025-10-12 02:21:53.804 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join SqlInjector init
+2025-10-12 02:21:53.819 [restartedMain] INFO  c.b.m.e.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@62a1ccb
+2025-10-12 02:21:53.852 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-12 02:21:53.860 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 48888 (http) with context path '/'
+2025-10-12 02:21:53.864 [restartedMain] INFO  t.clarkhg.democms.DemocmsApplication - Started DemocmsApplication in 0.416 seconds (process running for 1898.287)
+2025-10-12 02:21:53.865 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-10-12 02:21:57.321 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-12 02:21:57.322 [Thread-84] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-12 02:21:57.324 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-10-12 02:21:57.575 [restartedMain] WARN  o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[top.clarkhg.democms]' package. Please check your configuration.
+2025-10-12 02:21:57.589 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - MPJ SqlSessionFactory bean definition: sqlSessionFactory factoryBeanName: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration factoryMethodName: sqlSessionFactory source: com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(javax.sql.DataSource)
+2025-10-12 02:21:57.616 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 48888 (http)
+2025-10-12 02:21:57.618 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-12 02:21:57.619 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-12 02:21:57.629 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-12 02:21:57.630 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 214 ms
+2025-10-12 02:21:57.676 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2025-10-12 02:21:57.727 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join properties config complete
+2025-10-12 02:21:57.730 [restartedMain] INFO  c.g.y.a.MybatisPlusJoinAutoConfiguration - mybatis plus join SqlInjector init
+2025-10-12 02:21:57.742 [restartedMain] INFO  c.b.m.e.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5ac17a0b
+2025-10-12 02:21:57.774 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-12 02:21:57.783 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 48888 (http) with context path '/'
+2025-10-12 02:21:57.788 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-10-12 02:22:07.336 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-10-12 02:22:07.337 [Thread-88] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-12 02:22:07.338 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 师生共创'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link active">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <div class="page-content active">
+            <div class="section-title">师生共创</div>
+            <div class="sub-nav">
+                <div class="sub-nav-item"><a href="/education/teacher/teacher">名师荟萃</a></div>
+                <div class="sub-nav-item"><a href="/education/teacher/research">教学研究</a></div>
+                <div class="sub-nav-item active">多彩社团</div>
+                <div class="sub-nav-item"><a href="/education/student/activity">学生活动</a></div>
+            </div>
+
+            <div class="sub-page active">
+                <h3>社团活动</h3>
+
+                <!-- 社团介绍 -->
+                <div class="clubs-intro">
+                    <p th:utext="${studentClubP}"></p>
+                </div>
+
+                <!-- 社团列表 -->
+                <div class="clubs-container">
+                    <!-- 类别 -->
+                    <div class="club-category" th:each="category : ${categories}">
+                        <h4 th:text="${category.key}"><i class="fas fa-paint-brush"></i></h4>
+                        <div class="clubs-grid">
+                            <div class="club-card" th:each="clubItem : ${category.value}">
+                                <div class="club-image">
+                                    <img th:src="${clubItem.cover}" th:alt="${clubItem.name}"
+                                        onerror="this.src='/img/asset/placeholder.jpg'">
+                                </div>
+                                <div class="club-info">
+                                    <h5 th:text="${clubItem.name}"></h5>
+                                    <p th:text="${clubItem.desp}"></p>
+                                    <div class="club-details">
+                                        <strong><span th:text="'指导老师：'+${clubItem.supervisior}"><i class="fas fa-user"></i></span></strong>
+                                        <!-- <span><i class="fas fa-clock"></i></span> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 社团报名 -->
+                <div class="club-registration">
+                    <h4><i class="fas fa-edit"></i> 社团报名</h4>
+                    <p>欢迎同学们根据自己的兴趣爱好选择参加社团活动，请到各社团指导老师处报名。</p>
+                    <a href="/about/contact" class="btn-primary">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

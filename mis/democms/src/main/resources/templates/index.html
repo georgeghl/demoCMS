@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 官方网站'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link active">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <!-- 轮播图 -->
+        <div class="banner">
+            <div class="slide active" style="background-image: url('/img/asset/placeholder_banner.jpg');">
+                <div class="slide-content">
+                    <h2 th:text="'欢迎访问'+${schoolName}+'官方网站!'"></h2>
+                    <p th:text="${schoolSlogan}"></p>
+                </div>
+            </div>
+            <th:block th:each="newsItemCarousel:${newsItems}">
+                <div class="slide" th:style="'background-image: url('+${newsItemCarousel.cover}+');'">
+                    <div class="slide-content">
+                        <h2 th:text="${newsItemCarousel.title}"></h2>
+                        <p th:text="${newsItemCarousel.desp}"></p>
+                    </div>
+                </div>
+            </th:block>
+            <div class="banner-controls">
+                <div class="banner-control active"></div>
+                <th:block th:each="newsItemCarousel:${newsItems}">
+                    <div class="banner-control"></div>
+                </th:block>
+            </div>
+        </div>
+
+        <!-- 通知公告 -->
+        <div class="notice-section">
+            <div class="section-title">
+                <span><i class="fas fa-bullhorn"></i> 通知公告</span>
+                <a href="/notice" class="more-link">查看更多 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <ul class="notice-list" th:each="noticeItem:${noticeItems}">
+                <li class="notice-item">
+                    <a class="notice-a" th:href="'/notice/detail/'+${noticeItem.uid}" th:text="${noticeItem.title}"></a>
+                    <span class="notice-date" th:text="${noticeItem.time}"><i class="far fa-calendar-alt"></i> </span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 校园动态 -->
+        <div class="notice-section">
+            <div class="section-title">
+                <span><i class="fas fa-bullhorn"></i> 校园动态</span>
+                <a href="/news" class="more-link">查看更多 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <ul class="notice-list" th:each="newsItem: ${newsItems}">
+                <li class="notice-item">
+                    <a class="notice-a" th:href="'/news/detail/'+${newsItem.uid}" th:text="${newsItem.title}"></a>
+                    <span class="notice-a" th:text="${newsItem.time}"><i class="far fa-calendar-alt"></i> </span>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

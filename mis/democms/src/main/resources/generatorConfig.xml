@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>    <!-- 引入配置文件 -->
+    <properties resource="mybatis-generator.properties"></properties>    <!--
+    需要按照顺序配置plugin、commentGenerator、jdbcConnection、javaTypeResolver、
+    javaModelGenerator、sqlMapGenerator、javaClientGenerator、table -->
+    <context id="mySqlContext">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />        <!-- 配置生成的代码中的注释行为 -->
+        <commentGenerator>            <!-- 生成的代码中将不会包含生成日期的注释 -->
+            <property name="suppressDate" value="true" />            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>        <!--
+        数据库链接地址账号密码 -->
+        <jdbcConnection driverClass="${mybatis.generator.connection.driver}"
+            connectionURL="${mybatis.generator.connection.url}"
+            userId="${mybatis.generator.connection.username}"
+            password="${mybatis.generator.connection.password}"> </jdbcConnection>        <!-- 生成的 Java
+        类中数字类型的处理方式 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>        <!--
+        生成数据库实体类存放的包路径、项目路径 -->
+        <javaModelGenerator targetPackage="com.example.repository.entity"
+            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>        <!--
+        生成mapper.xml文件存放位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>        <!--
+        生成Dao接口类存放位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.repository.mapper"
+            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>        <!--
+        生成对应表及类名，需要生成多张表时，配置多个table -->
+        <table tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false"
+            enableUpdateByExample="false" enableDeleteByExample="false"
+            enableSelectByExample="false" selectByExampleQueryId="false"> </table>
+    </context>
+</generatorConfiguration>

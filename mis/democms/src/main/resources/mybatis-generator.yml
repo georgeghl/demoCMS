@@ -1,0 +1,7 @@
+mybatis: 
+  generator: 
+    connection: 
+      driver: com.mysql.cj.jdbc.Driver
+      url: 
+      username: 
+      password: 

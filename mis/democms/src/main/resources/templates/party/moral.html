@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text=" ${schoolName}+' - 党建德育'"></title>
+    <link rel="stylesheet" href="/css/font-awesome.6.4.0.all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="/img/favicon.svg" alt="校徽" class="logo-icon">
+                <span class="school-name" th:text="${schoolName}"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">首页</a></li>
+                    <li><a href="/about" class="nav-link">学校概况</a></li>
+                    <li><a href="/affair" class="nav-link">办事大厅</a></li>
+                    <li><a href="/notice" class="nav-link">通知公告</a></li>
+                    <li><a href="/news" class="nav-link">校园动态</a></li>
+                    <li><a href="/party" class="nav-link active">党建德育</a></li>
+                    <li><a href="/education" class="nav-link">师生共创</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <div class="page-content active">
+            <div class="section-title">党建德育</div>
+            <div class="sub-nav">
+                <div class="sub-nav-item"><a href="/party/party">党建公开</a></div>
+                <div class="sub-nav-item active">德育管理</div>
+            </div>
+
+            <div class="sub-page active">
+                <h3>德育管理</h3>
+                
+                <!-- 德育理念 -->
+                <div class="moral-concept">
+                    <h4><i class="fas fa-lightbulb"></i> 德育理念</h4>
+                    <div class="concept-content" th:utext="${moralConcept}">
+                        
+                    </div>
+                </div>
+
+                <!-- 德育活动 -->
+                <div class="moral-activities">
+                    <h4><i class="fas fa-calendar-check"></i> 德育活动</h4>
+                    <div class="activities-grid" th:utext="${moralActivity}">
+                        
+                    </div>
+                </div>
+
+                <!-- 德育成果 -->
+                <div class="moral-achievements">
+                    <h4><i class="fas fa-trophy"></i> 德育成果</h4>
+                    <div class="achievements-list" th:utext="${moralAchievement}">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container footer-content">
+            <p th:text="${schoolName}+' - '+${schoolSlogan}"></p>
+            <div class="footer-links">
+                <a href="/about/intro">关于我们</a>
+                <a href="/about/contact">联系我们</a>
+                <a href="/about/sitemap">网站地图</a>
+                <a href="/about/privacy">隐私政策</a>
+                <!-- <a href="index_cloud">云服务</a> -->
+            </div>
+            <div class="copyright">
+                <p th:text="${schoolAddress}"></p>
+                <p th:text="'© 2025 '+${schoolName}+' 版权所有'"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carousel.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
