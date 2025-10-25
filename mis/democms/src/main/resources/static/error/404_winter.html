@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Not Found</title>
-    <link rel="stylesheet" href="/css/layui.css">
+    
     <style>
         html,
         body {
@@ -60,14 +60,19 @@
             margin-bottom: 10px;
         }
 
-        .main-text .layui-btn {
-            background-color: #3498db;
-            font-size: 16px;
-        }
-
-        .main-text .layui-btn:hover {
-            background-color: #2980b9;
-        }
+.main-text a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c6e49;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.main-text a:hover {
+    background-color: #245c3b;
+}
 
         .logo {
             width: 80px;
@@ -218,11 +223,11 @@
     <div class="content">
         <canvas class="snowflakes" id="snowflakes"></canvas>
         <div class="main-text">
-            <img src="/img/favicon.svg" class="logo" alt="Democms Logo">
+            <img src="/favicon.ico" class="logo" alt="Democms Logo">
             <h1>404 - 页面未找到 / 404 - Not Found</h1>
             <p>哎呀！您要查找的页面已经像冬日的雪花一样飘走了。</p>
             <p>Oops! The page you're looking for has drifted away like snowflakes in a winter storm.</p>
-            <a href="/" class="layui-btn">Back to Home</a>
+            <a href="/">回到首页/Back to Home</a>
         </div>
         <div class="ground">
             <div class="snowman">
@@ -237,7 +242,7 @@
             <div class="error-text">404</div>
         </div>
     </div>
-    <script src="/js/layui.js"></script>
+    
     <script>
         (function () {
             function ready(fn) {
